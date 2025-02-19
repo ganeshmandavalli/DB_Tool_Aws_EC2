@@ -1,0 +1,232 @@
+<html lang="en">
+                                                            <head>
+                                                               <meta charset="UTF-8">
+                                                               <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                               <title>Audit Report</title>
+                                                                 <style>
+                                                                    body { font-family: Arial, sans-serif; margin: 20px; }
+                                                                    .header { text-align: right; font-size: 14px; margin-bottom: 10px; }
+                                                                    .info-box { background-color: #f2f2f2; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 20px; font-size: 14px; line-height: 1.5; }
+                                                                     h2 { color: #00008B; text-align: center; margin-top: 20px; }
+                                                                     h3 { color: #00008B; text-align: left; margin-top: 20px; }
+                                                                     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                                                                     table, th, td { border: 1px solid #ddd; }
+                                                                     th, td { padding: 12px; text-align: left; }
+                                                                     th { background-color: #00008B; color: white; }
+                                                                     tr:nth-child(even) { background-color: #f2f2f2; }
+                                                                     .status-passed { color: green; }
+                                                                     .status-failed { color: red; }
+                                                                     .status-manual { color: black; }
+                                                                     .status-nopermission { color: yellow; }
+                                                                     .footer { text-align: center; font-size: 14px; margin-top: 30px; padding: 10px 0; }
+                                                                     .summary-table th, .summary-table td { border: 1px solid #ddd; padding: 10px; text-align: center; font-weight: bold; }
+                                                                     .summary-table th { background-color: #00008B; color: white; }
+                                                                 </style>
+                                                            </head>
+                                                                <body>
+                                                                    <div class="header"><strong>Audit Date: </strong>2025-02-19 13:51:35</div>
+                                                     <div class="info-box">
+                                                      <p><strong>Microsoft SQL Server 2022 (RTM-GDR) (KB5046861) - 16.0.1135.2 (X64) 
+	Oct 18 2024 15:31:58 
+	Copyright (C) 2022 Microsoft Corporation
+	Express Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: ) (Hypervisor)</strong><br> 
+                                                      </p> 
+                                                  </div><h2>Database Audit Report - CIS_Microsoft_SQL_Server_2022_Benchmark_v1.1.0 </h2><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                      <strong> 1. Installation, Updates and Patches </strong>  
+                                                  </p><table>
+                                                               <tr>
+                                                                <th>Check</th>
+                                                                <th>Status</th>
+                                                               </tr><tr>
+                                                                     <td>1.1 Ensure Latest SQL Server Cumulative and Security Updates are Installed (Manual) </td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                 <td>1.2  Ensure Single-Function Member Servers are Used (Manual)</td>
+                                                                 <td class="status-manual">Manual</td>
+                                                             </tr></table><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                                     <strong>2. Surface Area Reduction</strong>
+                                                                  </p><table>
+                                                               <tr>
+                                                                   <th>Check</th>
+                                                                   <th>Status</th>
+                                                               </tr><tr>
+                                                                      <td>2.1 Ensure 'Ad Hoc Distributed Queries' Server Configuration Option is set to '0' (Scored)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                </tr><tr>
+                                                                     <td>2.2 Ensure 'CLR Enabled' Server Configuration Option is set to '0'(Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                     <td>2.3 Ensure 'Cross DB Ownership Chaining' Server Configuration Option is set to '0' (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                     <td>2.4 Ensure 'Database Mail XPs' Server Configuration Option is set to '0' (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                      <td>2.5 Ensure 'Ole Automation Procedures' Server Configuration option is set to '0' (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                      <td>2.6 Ensure 'Remote Access' Server Configuration Option is set to '0' (Automated)</td>
+                                                                      <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                     <td>2.7 Ensure 'Remote Admin Connections' Server Configuration Option is set to '0' (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                     <td>2.8 Ensure 'Scan For Startup Procs' Server Configuration Option is set to '0' (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                     <td>2.9 Ensure 'Trustworthy' Database Property is set to 'Off'(Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                 <td>2.10 Ensure Unnecessary SQL Server Protocols are set to 'Disabled' (Manual)'</td>
+                                                                 <td class="status-manual">Manual</td>
+                                                             </tr><tr>
+                                                                      <td>2.11 Ensure 'Trustworthy' Database Property is set to 'Off'(Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                  </tr><tr>
+                                                                     <td>2.12 Ensure 'Hide Instance' option is set to 'Yes' for Production SQL Server instances (Automated)</td>
+                                                                     <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                      <td>2.13 Ensure the 'sa' Login Account is set to 'Disabled' (Automated)</td>
+                                                                       <td class="status-failed">Failed</td>
+                                                                </tr><tr>
+                                                                      <td>2.14 Ensure 'sa' Login Account has been renamed (Scored)</td>
+                                                                      <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                     <td>2.15 Ensure 'AUTO_CLOSE' is set to 'OFF' on contained databases (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                      <td>2.16 Ensure no login exists with the name 'sa' (Automated)</td>
+                                                                      <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                     <td>2.17 Ensure 'clr strict security' Server Configuration Option is set to '1' (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr></table><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                                 <strong>3.Authentication and Authorization</strong> </p><table>
+                                                                    <tr>
+                                                                        <th>Check</th>
+                                                                        <th>Status</th>
+                                                                    </tr><tr>
+                                                                      <td>3.1 Ensure 'Server Authentication' Property is set to 'Windows Authentication Mode' (Automated)</td>
+                                                                      <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                                  <td>3.2 Ensure CONNECT permissions on the 'guest' user is Revoked within all SQL Server databases (Automated)</td>
+                                                                                  <td class="status-passed">Passed</td>
+                                                                              </tr><tr>
+                                                                              <td>3.3 Ensure 'Orphaned Users' are Dropped From SQL Server Databases (Scored)</td>
+                                                                              <td class="status-passed">Passed</td>
+                                                                         </tr><tr>
+                                                                     <td>3.4 Ensure SQL Authentication is not used in contained databases (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                  <td>3.5 Ensure the SQL Server's MSSQL Service Account is Not an Administrator (Manual)'</td>
+                                                                  <td class="status-manual">Manual</td>
+                                                             </tr><tr>
+                                                                  <td>3.6 Ensure the SQL Server's SQLAgent Service Account is Not an Administrator</td>
+                                                                  <td class="status-manual">Manual</td>
+                                                             </tr><tr>
+                                                                 <td>3.7 Ensure the SQL Server's Full-Text Service Account is Not an Administrator (Manual)</td>
+                                                                 <td class="status-manual">Manual</td>
+                                                             </tr><tr>
+                                                                      <td>3.8 Ensure only the default permissions specified by Microsoft are granted to the public server role (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                      <td>3.9 Ensure Windows BUILTIN groups are not SQL Logins (Automated)</td>
+                                                                      <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                      <td>3.10 Ensure Windows local groups are not SQL Logins (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                     <td>3.11 Ensure the public role in the msdb database is not granted access to SQL Agent proxies (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr><tr>
+                                                                  <td>3.12 Ensure the 'SYSADMIN' Role is Limited to Administrative or Built-in Accounts (Manual)</td>
+                                                                  <td class="status-manual">Manual</td>
+                                                              </tr><tr>
+                                                                     <td>3.13 Ensure membership in admin roles in MSDB database is limited (Automated)</td>
+                                                                     <td class="status-passed">Passed</td>
+                                                                 </tr></table><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                                                    <strong>4. Password Policies</strong>
+                                                                                 </p><table>
+                                                                    <tr>
+                                                                        <th>Check</th>
+                                                                        <th>Status</th>
+                                                                    </tr><tr>
+                                                                  <td>4.1 Ensure 'MUST_CHANGE' Option is set to 'ON' for All SQL Authenticated Logins (Manual)</td>
+                                                                  <td class="status-manual">Manual</td>
+                                                             </tr><tr>
+                                                                      <td>4.2 Ensure 'CHECK_EXPIRATION' Option is set to 'ON' for All SQL Authenticated Logins Within the Sysadmin Role (Automated))</td>
+                                                                      <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                      <td>4.3 Ensure 'CHECK_POLICY' Option is set to 'ON' for All SQL Authenticated Logins (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                 </tr></table><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                                                                   <strong>5.Auditing and Logging </strong>
+                                                                                                </p><table>
+                                                                    <tr>
+                                                                         <th>Check</th>
+                                                                         <th>Status</th>
+                                                                    </tr><tr>
+                                                                     <td>5.1 Ensure 'Maximum number of error log files' is set to greater than or equal to '12' (Automated)</td>
+                                                                     <td class="status-failed">Failed</td>
+                                                                 </tr><tr>
+                                                                      <td>5.2 Ensure 'Default Trace Enabled' Server Configuration Option is set to '1' (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                  </tr><tr>
+                                                                      <td>5.3 Ensure 'Login Auditing' is set to 'failed logins' (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                 </tr></table><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                                       <strong>6.Application Development</strong> </p><table>
+                                                                    <tr>
+                                                                        <th>Check</th>
+                                                                        <th>Status</th>
+                                                                    </tr><tr>
+                                                                  <td>6.1 Ensure Database and Application User Input is Sanitized (Manual)</td>
+                                                                  <td class="status-manual">Manual</td>
+                                                             </tr><tr>
+                                                                      <td>6.2 Ensure 'CLR Assembly Permission Set' is set to 'SAFE_ACCESS' for All CLR Assemblies (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                 </tr></table><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                                                       <strong>7.Encryption</strong> </p><table>
+                                                                    <tr>
+                                                                        <th>Check</th>
+                                                                        <th>Status</th>
+                                                                    </tr><tr>
+                                                                              <td>7.1 Ensure 'Symmetric Key encryption algorithm' is set to 'AES_128' or higher in non-system databases (Automated)</td>
+                                                                              <td class="status-passed">Passed</td>
+                                                                         </tr><tr>
+                                                                              <td>7.2 Ensure Asymmetric Key Size is set to 'greater than or equal to 2048' in non-system databases (Automated)</td>
+                                                                              <td class="status-passed">Passed</td>
+                                                                         </tr><tr>
+                                                                      <td>7.3 Ensure Database Backups are Encrypted (Automated)</td>
+                                                                      <td class="status-passed">Passed</td>
+                                                                  </tr><tr>
+                                                                     <td>7.4 Ensure Network Encryption is Configured and Enabled(Automated)</td>
+                                                                     <td class="status-failed">Failed</td>
+                                                                  </tr></table><p style="color: #00008B; font-size: 20px; text-align: left; margin-top: 20px;">
+                                                                      <strong>8 Appendix: Additional Considerations</strong> </p><table>
+                                                                    <tr>
+                                                                        <th>Check</th>
+                                                                        <th>Status</th>
+                                                                    </tr><tr>
+                                                                  <td>8.1 Ensure 'SQL Server Browser Service' is configured correctly (Manual)</td>
+                                                                  <td class="status-manual">Manual</td>
+                                                            </tr></table><table class="summary-table" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                                                               <tr>
+                                                                   <th>Total Passed</th>
+                                                                   <th>Total Failed</th>
+                                                                   <th>Total Manual</th>
+                                                                   <th>No Permission</th>
+                                                               </tr>
+                                                               <tr>
+                                                                   <td class="status-passed" style="text-align: center;">26</td>
+                                                                   <td class="status-failed" style="text-align: center;">10</td>
+                                                                   <td class="status-manual" style="text-align: center;">9</td>
+                                                                   <td class="status-nopermission" style="text-align: center;">0</td>
+                                                               </tr>
+                                                             </table>
+                                                                 <footer style="text-align: center; font-size: 14px; margin-top: 30px; padding: 10px 0;">
+                                                                     <p>2024 All Rights Reserved to Secure Auditix tool</p>
+                                                                     <p>Coded and UI Designed by <strong>Mandavalli Ganesh<strong></p>
+                                                                 </footer>
+                                                          </body>
+                                                      </html>

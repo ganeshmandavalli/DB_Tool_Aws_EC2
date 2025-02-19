@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Auditix Tool</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            /* Add the background image */
+            background-image: url('C:/Users/ganim/Desktop/DB_Tool/SecureAuditix/Image.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Centers the image */
+        }
+
+        .container {
+            width: 650px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        select, input[type="text"], input[type="password"] {
+            font-size: 14px;
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid black; /* Add black border for visibility */
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            font-size: 16px;
+            background-color: lightblue;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            align-self: center; /* Center the button */
+        }
+
+        .submit-btn:hover {
+            background-color: #87ceeb;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-box {
+            padding: 15px;
+            border: 1px solid black; /* Black border for footer box */
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer .bold {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .footer .footer-label {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .copyright-box {
+            padding: 15px;
+            border: 1px solid black; /* Black border for copyright box */
+            border-radius: 8px;
+            background-color: #fff;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleFields() {
+            var dbType = document.getElementById('db_type').value;
+
+            // Reset all fields to hidden
+            document.getElementById('dsn_fields').classList.add('hidden');
+            document.getElementById('server_fields').classList.add('hidden');
+            document.getElementById('database_fields').classList.add('hidden');
+
+            // Show fields based on selected DB type
+            if (dbType === "Oracle") {
+                document.getElementById('dsn_fields').classList.remove('hidden');
+            } else if (dbType === "Postgresql" || dbType === "MS SQL") {
+                document.getElementById('server_fields').classList.remove('hidden');
+                document.getElementById('database_fields').classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="heading">Secure Auditix Tool</div>
+
+    <form method="post" action="{% url 'audit_database' %}">
+        {% csrf_token %}
+
+        <label for="db_type">Select Database Type:</label>
+        <select id="db_type" name="db_type" onchange="toggleFields()">
+            <option value="">Select</option>
+            <option value="Oracle">Oracle</option>
+            <option value="MS SQL">MS SQL</option>
+            <option value="Postgresql">Postgresql</option>
+        </select>
+
+        <div id="dsn_fields" class="hidden">
+            <label for="dsn">DSN:</label>
+            <input type="text" id="dsn" name="dsn" placeholder="Enter DSN">
+        </div>
+
+        <div id="server_fields" class="hidden">
+            <label for="server">Server:</label>
+            <input type="text" id="server" name="server" placeholder="Enter Server">
+        </div>
+
+        <div id="database_fields" class="hidden">
+            <label for="database">Database:</label>
+            <input type="text" id="database" name="database" placeholder="Enter Database Name">
+        </div>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password">
+
+        <label for="audit_standard">Select Audit Standard:</label>
+        <select id="audit_standard" name="audit_standard">
+            <option value="">Select</option>
+            <option value="CIS">CIS</option>
+            <option value="DISA_STIG">DISA STIG</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Audit Database</button>
+    </form>
+</div>
+
+<div class="footer">
+    <div class="footer-box">
+        <div class="footer-label">Automation for database security auditing using script by</div>
+        <div class="footer-label bold">Mahender</div>
+        <div class="footer-label">Conversion of the script to an executable .exe format by</div>
+        <div class="footer-label bold">Kranthi</div>
+        <div class="footer-label">Audit report generated in HTML format for accessibility by</div>
+        <div class="footer-label bold">Prasad</div>
+        <div class="footer-label">Coded & UI Design for seamless interaction by</div>
+        <div class="footer-label bold">Ganesh</div>
+    </div>
+
+    <div class="copyright-box">© 2024 All Rights Reserved to Secure Auditix Tool</div>
+</div>
+
+</body>
+</html>

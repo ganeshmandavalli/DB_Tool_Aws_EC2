@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Results</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            width: 650px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 16px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Audit Results</div>
+        <div class="content">
+            <p><strong>Database Type:</strong> {{ audit_results.db_type }}</p>
+            <p><strong>Audit Standard:</strong> {{ audit_results.audit_standard }}</p>
+            <p><strong>Status:</strong> {{ audit_results.status }}</p>
+        </div>
+        <div class="footer">Thank you for using Secure Auditix Tool</div>
+    </div>
+</body>
+</html>
